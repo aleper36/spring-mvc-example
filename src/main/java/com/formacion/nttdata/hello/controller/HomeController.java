@@ -1,6 +1,7 @@
 package com.formacion.nttdata.hello.controller;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
@@ -39,11 +40,13 @@ public class HomeController {
 		model.addAttribute("userName", user.getUserName());
 		
 		Date fecha = new Date();
+		SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+		
 		Instant instant = fecha.toInstant();
 		Instant añadir = instant.plus(user.getDias(), ChronoUnit.DAYS);
 		
 	    model.addAttribute("fecha", añadir);
-	    model.addAttribute("actual", fecha);
+	    model.addAttribute("actual", formatoFecha.format(fecha));
 	    
 		return "user";
 	}
