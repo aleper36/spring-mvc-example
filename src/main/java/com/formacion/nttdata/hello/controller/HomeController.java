@@ -1,6 +1,8 @@
 package com.formacion.nttdata.hello.controller;
 
 import java.text.DateFormat;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.Locale;
 
@@ -35,6 +37,15 @@ public class HomeController {
 	public String user(@Validated User user, Model model) {
 		System.out.println("User Page Requested");
 		model.addAttribute("userName", user.getUserName());
+		
+		Date fecha = new Date();
+		Instant instant = fecha.toInstant();
+		Instant añadir = instant.plus(user.getDias(), ChronoUnit.DAYS);
+		
+	    model.addAttribute("fecha", añadir);
+	    model.addAttribute("actual", fecha);
+	    
 		return "user";
 	}
+	
 }

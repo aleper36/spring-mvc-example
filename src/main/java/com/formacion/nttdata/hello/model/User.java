@@ -3,6 +3,15 @@ package com.formacion.nttdata.hello.model;
 public class User {
 	String userName;
 	String userSurname;
+	long dias;
+	
+
+	public long getDias() {
+		return dias;
+	}
+	public void setDias(long dias) {
+		this.dias = dias;
+	}
 	public String getUserName() {
 		return userName;
 	}

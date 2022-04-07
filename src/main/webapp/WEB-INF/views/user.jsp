@@ -6,6 +6,8 @@
 <title>User Home Page</title> 
 </head> 
 <body> 
-<h3>Hi ${userName}</h3> 
+<h3>Hola ${userName}</h3> 
+<h3>Fecha actual: ${actual}</h3> 
+<h3>Añadido: ${fecha}</h3>
 </body> 
 </html>
